@@ -1,7 +1,9 @@
+# Import some neccssary modules
 from itertools import combinations
 from scipy.optimize import fsolve
 from copy import copy
 from pdb import set_trace
+
 INFT = float(10**10)
 class Bound(object):
     def __init__(self,x,y,r):
@@ -64,8 +66,7 @@ def solve(three_bounds):
         ]
     return fsolve(f,[1.0,1.0,0.0])
 # test:
-def ball_in_box(m, blockers):
-    for x in blockers:
+def ball_in_box(m, blockers): for x in blockers:
         tmp = list(x)
         tmp.append(0)
         b = Bound(tmp[0],tmp[1],tmp[2])

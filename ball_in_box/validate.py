@@ -7,13 +7,13 @@ def validate(circles, blockers):
         xpr = circle[0] + circle[2]
         ymr = circle[1] - circle[2]
         ypr = circle[1] + circle[2]
-
+ 
         if (not (xmr <= 1 and xmr >=-1 )) \
            or (not (xpr <= 1 and xpr >=-1 )) \
            or (not (ymr <= 1 and ymr >=-1 )) \
            or (not (ypr <= 1 and ypr >=-1 )):
             return False
-
+        
     # Is circle good for blockers?
     if blockers is not None and len(blockers) > 0:
         for circle in circles:

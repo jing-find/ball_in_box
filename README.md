@@ -114,6 +114,7 @@
 </tr>
 <tr>
 <td align="left">100</td>
+
 <td align="left">没有障碍物</td>
 </tr></tbody></table>
 </article>
@@ -122,7 +123,9 @@
 
   </div>
 
-  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">
+
+
+<button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">
 
 conda install --file requirements.txt -y
 

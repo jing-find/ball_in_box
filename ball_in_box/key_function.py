@@ -1,8 +1,10 @@
+
 from itertools import combinations
 from scipy.optimize import fsolve
 from copy import copy
 from pdb import set_trace
 INFT = float(10**10)
+
 class Bound(object):
     def __init__(self,x,y,r):
         self.x , self.y , self.r = x , y , r
@@ -23,6 +25,7 @@ class Bound(object):
             if not self.fit(i):
                 return False
         return True
+
 # bound( x , y , r )
 bound_set0 = [
     Bound( -INFT , 0.0 , INFT ),
@@ -43,6 +46,7 @@ def find(bound_set):
             max_bound = new_bound                
     new_bound_set.append(max_bound)
     return new_bound_set
+
 def solve(three_bounds):
     def fi(solution,bound):
         if bound.x == INFT :
@@ -62,6 +66,7 @@ def solve(three_bounds):
             fi(x,three_bounds[2])
         ]
     return fsolve(f,[0.5,0.5,0.0])
+
 # test:
 for x in find(find(find(find(find(find(bound_set0))))))[len(bound_set0):]:
     print(x.x)

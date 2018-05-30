@@ -5,6 +5,7 @@ from copy import copy
 from pdb import set_trace
 
 INFT = float(10**10)
+
 class Bound(object):
     def __init__(self,x,y,r):
         self.x , self.y , self.r = x , y , r
@@ -25,6 +26,7 @@ class Bound(object):
             if not self.fit(i):
                 return False
         return True
+		
 # bound( x , y , r )
 bound_set0 = [
     Bound( -INFT , 0.0 , INFT ),
@@ -33,6 +35,7 @@ bound_set0 = [
     Bound(  0.0, INFT, INFT  ),
     ]
 circles = []
+
 def find(bound_set):
     new_bound_set = bound_set
     max_r = 0
@@ -46,6 +49,7 @@ def find(bound_set):
     bd = [max_bound.x,max_bound.y,max_bound.r]
     circles.append(bd)
     return max_bound
+	
 def solve(three_bounds):
     def fi(solution,bound):
         if bound.x == INFT :
@@ -65,6 +69,7 @@ def solve(three_bounds):
             fi(x,three_bounds[2])
         ]
     return fsolve(f,[1.0,1.0,0.0])
+	
 # test:
 def ball_in_box(m, blockers): for x in blockers:
         tmp = list(x)

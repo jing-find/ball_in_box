@@ -6,14 +6,12 @@ def validate(circles, blockers):
         xmr = circle[0] - circle[2]
         xpr = circle[0] + circle[2]
         ymr = circle[1] - circle[2]
-        ypr = circle[1] + circle[2]
- 
+        ypr = circle[1] + circle[2] 
         if (not (xmr <= 1 and xmr >=-1 )) \
            or (not (xpr <= 1 and xpr >=-1 )) \
            or (not (ymr <= 1 and ymr >=-1 )) \
            or (not (ypr <= 1 and ypr >=-1 )):
-            return False
-        
+            return False        
     # Is circle good for blockers?
     if blockers is not None and len(blockers) > 0:
         for circle in circles:
@@ -25,7 +23,6 @@ def validate(circles, blockers):
                 by = block[1]
                 if math.sqrt((x - bx)**2 + (y - by)**2) < r:
                     return False
-
     # Is circle good for each other?
     for circle1 in circles:
         for circle2 in circles :
@@ -38,6 +35,5 @@ def validate(circles, blockers):
                 r2 = circle2[2]
                 if math.sqrt((x1 - x2)**2 + (y1 - y2)**2) < (r1 + r2):
                     return False
-
     # all good
     return True
